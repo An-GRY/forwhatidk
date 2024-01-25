@@ -1,17 +1,43 @@
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<style>
-.frame_center {
-  text-align: center;
-  margin-left: 35%;
-}
-</style>
-<title>テスト</title>
-<meta name="description" content="テスト中">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbox Link Extractor</title>
+    <style>
+        .frame_center {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
- 
 <body>
-  <iframe  class= "frame_center" src="https://flytech.work" width="400" height="400"></iframe>
+
+<iframe class="frame_center" id="myFrame" src="https://flytech.work" width="400" height="400"></iframe>
+
+<div style="text-align: center; margin-top: 20px;">
+    <label for="linkInput">リンクを入力：</label>
+    <input type="text" id="linkInput" placeholder="https://example.com">
+    <button onclick="displayLink()">リンク表示</button>
+</div>
+
+<script>
+    function displayLink() {
+        // iframe内のdocumentにアクセス
+        var iframeDocument = document.getElementById('myFrame').contentDocument || document.getElementById('myFrame').contentWindow.document;
+
+        // 入力されたリンクを取得
+        var linkInput = document.getElementById('linkInput').value;
+
+        // iframe内のtextboxにリンクをセット
+        var iframeTextbox = iframeDocument.getElementById('textboxId');  // textboxIdは実際のiframe内のtextboxのIDに置き換えてください
+        if (iframeTextbox) {
+            iframeTextbox.value = linkInput;
+        } else {
+            alert('指定されたIDのtextboxが見つかりませんでした。');
+        }
+    }
+</script>
+
 </body>
 </html>
