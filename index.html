@@ -13,31 +13,7 @@
 </head>
 <body>
 
-<iframe class="frame_center" id="myFrame" src="https://pornhub.com" width="400" height="400"></iframe>
-
-<div style="text-align: center; margin-top: 20px;">
-    <label for="linkInput">リンクを入力：</label>
-    <input type="text" id="linkInput" placeholder="https://example.com">
-    <button onclick="displayLink()">リンク表示</button>
-</div>
-
-<script>
-    function displayLink() {
-        // iframe内のdocumentにアクセス
-        var iframeDocument = document.getElementById('myFrame').contentDocument || document.getElementById('myFrame').contentWindow.document;
-
-        // 入力されたリンクを取得
-        var linkInput = document.getElementById('linkInput').value;
-
-        // iframe内のtextboxにリンクをセット
-        var iframeTextbox = iframeDocument.getElementById('textboxId');  // textboxIdは実際のiframe内のtextboxのIDに置き換えてください
-        if (iframeTextbox) {
-            iframeTextbox.value = linkInput;
-        } else {
-            alert('指定されたIDのtextboxが見つかりませんでした。');
-        }
-    }
-</script>
+<iframe src="https://www.pornhub.com/embed/ph61520d0bd0b88" frameborder="0" width="560" height="340" scrolling="no" allowfullscreen></iframe>
 
 </body>
 </html>
